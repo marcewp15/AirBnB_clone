@@ -10,11 +10,28 @@ from datetime import datetime
 
 class BaseModel:
     """ This class defines all common attributes/methods for other classes """
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """ method constructor """
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
-        self.update_at = datetime.now()
+        self.updated_at = datetime.now()
+
+        if kwargs is not None:
+            form = "%Y-%m-%dT%H:%M:%S.%f"
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "created_at":
+                    self.created_at = datetime.strptime(value, form)
+                if key == "updated_at":
+                    self.updated_at = datetime.strptime(value, form)
+                if key == "name":
+                    self.name = value
+                if key == "my_number":
+                    self.my_number = value
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
 
     def __str__(self):
         """ print a readable string """
@@ -23,7 +40,7 @@ class BaseModel:
 
     def save(self):
         """ updates with the current datetime """
-        self.update_at = datetime.now()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """
@@ -34,7 +51,7 @@ class BaseModel:
 
         formato = "%Y-%m-%dT%H:%M:%S.%f"
         dictnew['created_at'] = self.created_at.strftime(formato)
-        dictnew['update_at'] = self.update_at.strftime(formato)
+        dictnew['updated_at'] = self.updated_at.strftime(formato)
         dictnew['id'] = self.id
         dictnew['name'] = self.name
         dictnew['my_number'] = self.my_number
