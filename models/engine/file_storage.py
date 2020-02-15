@@ -3,12 +3,17 @@
 
 """
 
+
+import json
+from models.base_model import BaseModel
+
 class FileStorage:
     """
 
     """
     __file_path = 'file.json'
     __objects = {}
+
     def all(self):
         """
         Method returns the dictionary __objects
@@ -29,21 +34,24 @@ class FileStorage:
         """
         serialization
         """
-        with open(self.__file_path, 'w+') as f:
-            my_dict = {}
+        my_dict = {}
+        with open(self.__file_path, 'a') as f:
             for key, value in self.__objects.items():
                 my_dict[key] = value.to_dict()
-            json.dump(my_dict, f)
+            f.write(json.dumps(my_dict))
+            #f.write(m)
 
     def reload(self):
         """
         deserialization
         """
+        classes = {'BaseModel':BaseModel}
         try:
             with open(self.__file_path, 'r') as f1:
-                file_store = json.load(f1)
-                for key, value in file_store.items():
-                    val = models.cls_dict[value['__class__']](**value)
-                    self.__objects[obj_id] = val
-        except FileNotFoundError:
+                file_store = json.loads(f1.read())
+            for key, value in file_store.items():
+                val = models.classes[value['__class__']](**value)
+                #val = models.classes[file_store[key]['__class__']](**file_store[key])
+                self.__objects[key] = val
+        except:
             pass
