@@ -51,7 +51,8 @@ class FileStorage:
                 file_store = json.load(f1)
                 for key, value in file_store.items():
                     if '__class__' in value:
-                        self.__objects[key] = classes[value['__class__']](**value)
+                        val = classes[value['__class__']](**value)
+                        self.__objects[key] = val
         except:
             pass
         """
