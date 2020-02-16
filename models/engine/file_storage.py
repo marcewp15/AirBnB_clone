@@ -47,8 +47,8 @@ class FileStorage:
 
         classes = {'BaseModel':BaseModel}
         try:
-            with open(self.__file_path, 'r', encoding='utf-8') as myFile:
-                file_store = json.load(myFile)
+            with open(self.__file_path, 'r') as f1:
+                file_store = json.load(f1)
                 for key, value in file_store.items():
                     if '__class__' in value:
                         self.__objects[key] = classes[value['__class__']](**value)
