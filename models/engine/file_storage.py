@@ -3,7 +3,6 @@
 
 """
 
-import os
 import json
 from models.base_model import BaseModel
 import models
@@ -29,7 +28,6 @@ class FileStorage:
         new_2 = obj.id
         new = new_1 + '.' + new_2
         self.__objects[new] = obj
-        return self.__objects
 
     def save(self):
         """
