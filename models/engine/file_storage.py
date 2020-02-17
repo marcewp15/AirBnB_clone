@@ -7,6 +7,7 @@ import json
 from models.base_model import BaseModel
 import models
 
+
 class FileStorage:
     """
 
@@ -38,14 +39,12 @@ class FileStorage:
             for key, value in self.__objects.items():
                 dict_add[key] = value.to_dict()
             json.dump(dict_add, f)
-            #f.write(m)
 
     def reload(self):
         """
         deserialization
         """
-
-        classes = {'BaseModel':BaseModel}
+        classes = {'BaseModel': BaseModel}
         try:
             with open(self.__file_path, 'r') as f1:
                 file_store = json.load(f1)
@@ -55,14 +54,3 @@ class FileStorage:
                         self.__objects[key] = val
         except:
             pass
-        """
-        try:
-            with open(self.__file_path, 'r') as f1:
-                file_store = json.load(f1)
-                for key, value in file_store.items():
-                    val = models.classes[value['__class__']](**value)
-                #val = models.classes[file_store[key]['__class__']](**file_store[key])
-                self.__objects[key] = val
-        except:
-            pass
-        """
