@@ -9,6 +9,7 @@ from datetime import datetime
 import models
 import copy
 
+
 class BaseModel:
     """ This class defines all common attributes/methods for other classes """
     def __init__(self, *args, **kwargs):
@@ -29,17 +30,12 @@ class BaseModel:
                 if key == "updated_at":
                     self.updated_at = datetime.strptime(value, form)
                     continue
-                # if key == "name":
-                #     self.name = value
-                # if key == "my_number":
-                #     self.my_number = value
                 if key != "__class__":
                     setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             models.storage.new(self)
-#            models.storage.save()
 
     def __str__(self):
         """ print a readable string """
@@ -55,7 +51,6 @@ class BaseModel:
         """
         returns a dictionary with all keys/value of __dict__ of the instance
         """
-        #dictnew = copy.deepcopy(self.__dict__)
         dictnew = {}
         dictnew['__class__'] = self.__class__.__name__
 
