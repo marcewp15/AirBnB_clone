@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-
-"""
+""" FileStorage Class - serializes and deserializes JSON file to instances """
 
 import json
 from models.base_model import BaseModel
@@ -10,31 +8,23 @@ import models
 
 
 class FileStorage:
-    """
-
-    """
+    """ This class serializes and deserializes JSON files """
     __file_path = 'file.json'
     __objects = {}
 
     def all(self):
-        """
-        Method returns the dictionary __objects
-        """
+        """ Method returns the dictionary __objects """
         return self.__objects
 
     def new(self, obj):
-        """
-
-        """
+        """ sets in __objects the obj with class name and id """
         new_1 = obj.__class__.__name__
         new_2 = obj.id
         new = new_1 + '.' + new_2
         self.__objects[new] = obj
 
     def save(self):
-        """
-        serialization
-        """
+        """ serialization """
         dict_add = {}
         with open(self.__file_path, 'w') as f:
             for key, value in self.__objects.items():
@@ -42,9 +32,7 @@ class FileStorage:
             json.dump(dict_add, f)
 
     def reload(self):
-        """
-        deserialization
-        """
+        """ deserialization """
         classes = {'BaseModel': BaseModel, 'User': User}
         try:
             with open(self.__file_path, 'r') as f1:

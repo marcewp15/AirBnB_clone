@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" AirBnB Console project """
 
 import cmd
 from models import storage
@@ -21,8 +22,8 @@ class HBNBCommand(cmd.Cmd):
         else:
             for i in classes:
                 if i == args:
-                  a1 = str(args) + '()'
-                  a = eval(a1)
+                    a1 = str(args) + '()'
+                    a = eval(a1)
             print(a.id)
             a.save()
         pass
@@ -69,7 +70,7 @@ class HBNBCommand(cmd.Cmd):
                     print("{}".format(obj))
 
     def do_destroy(self, args):
-        """  """
+        """ Deletes an instance based on the class name and id """
         words = args.split(' ')
         if len(args) == 0:
             print("** class name missing **")
@@ -90,7 +91,8 @@ class HBNBCommand(cmd.Cmd):
         print("** no instance found **")
 
     def do_update(self, args):
-        """ """
+        """ Updates an instance based on the class name and id
+        by adding or updating attribute """
         words = args.split(' ')
         if len(args) == 0:
             print("** class name missing **")
@@ -112,7 +114,7 @@ class HBNBCommand(cmd.Cmd):
                     print("** attribute name missing **")
                     return
                 if words[3][0] == "\"" and words[3][-1] == "\"":
-                    setattr(value,words[2], words[3][1:-1])
+                    setattr(value, words[2], words[3][1:-1])
                     storage.save()
                     return
                 setattr(value, words[2], words[3])
