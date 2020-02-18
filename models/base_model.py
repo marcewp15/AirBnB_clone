@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-AirBnb project - BaseModel class
-"""
-
+""" AirBnb project - BaseModel class """
 
 import uuid
 from datetime import datetime
@@ -53,9 +50,8 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """
-        returns a dictionary with all keys/value of __dict__ of the instance
-        """
+        """ returns a dictionary with all keys/value
+        of __dict__ of the instance """
         dictnew = copy.deepcopy(self.__dict__)
         dictnew['__class__'] = self.__class__.__name__
 
