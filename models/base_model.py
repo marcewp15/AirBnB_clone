@@ -51,7 +51,7 @@ class BaseModel:
         """
         returns a dictionary with all keys/value of __dict__ of the instance
         """
-        dictnew = {}
+        dictnew = copy.deepcopy(self.__dict__)
         dictnew['__class__'] = self.__class__.__name__
 
         formato = "%Y-%m-%dT%H:%M:%S.%f"

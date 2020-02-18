@@ -1,21 +1,19 @@
 #!/usr/bin/python3
 
 import cmd
-#from models.storage import FileStorage
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 
-classes = ['BaseModel']
+classes = ['BaseModel', 'User']
 
 
 class HBNBCommand(cmd.Cmd):
     """ the command interpreter of AirBnB project """
     prompt = '(hbnb) '
-    classes = ['BaseModel']
 
     def do_create(self, args):
         """ create a new instance of a class and prints the id """
-        #classes = ['BaseModel']
         if len(args) == 0:
             print("** class name missing **")
         elif args not in classes:
@@ -28,7 +26,6 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """ Prints the json file of an instance of a class name and id """
-        #classes = ['BaseModel']
         words = args.split(' ')
         if len(args) == 0:
             print("** class name missing **")
@@ -100,9 +97,6 @@ class HBNBCommand(cmd.Cmd):
         elif len(words) == 1:
             print("** instance id missing **")
             return
-        if len(words) == 2:
-            print("** attribute name missing **")
-            return
         if len(words) == 3:
             print("** value missing **")
             return
@@ -110,8 +104,10 @@ class HBNBCommand(cmd.Cmd):
         all_objs = storage.all()
         for key, value in all_objs.items():
             if s1 in key:
-                up = BaseModel.to_dict(self)
-                up[words[2]] = words[3]
+                if len(words) == 2:
+                    print("** attribute name missing **")
+                    return
+                setattr(value, words[2], words[3])
                 storage.save()
                 return
         print("** no instance found **")

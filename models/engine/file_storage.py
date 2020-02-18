@@ -5,6 +5,7 @@
 
 import json
 from models.base_model import BaseModel
+from models.user import User
 import models
 
 
@@ -44,7 +45,7 @@ class FileStorage:
         """
         deserialization
         """
-        classes = {'BaseModel': BaseModel}
+        classes = {'BaseModel': BaseModel, 'User': User}
         try:
             with open(self.__file_path, 'r') as f1:
                 file_store = json.load(f1)
