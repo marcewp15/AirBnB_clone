@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" unique instance of FileStorage """
 
 from models.engine.file_storage import FileStorage
 
