@@ -127,6 +127,26 @@ class HBNBCommand(cmd.Cmd):
                 return
         print("** no instance found **")
 
+    def precmd(self, line):
+        """
+
+        """
+        words = line.split('.', 1)
+        if len(words) == 1:
+            return cmd.Cmd.precmd(self, line)
+        s1 = words[1][:-1].split('(', 1)
+        t1 = s1[1].split(', ')
+        if s1[1] == '':
+            s = s1[0] + ' ' + words[0]
+            return cmd.Cmd.precmd(self, s)
+        if len(t1) >= 1:
+            s = s1[0] + ' ' + words[0] + ' ' + t1[0][1:-1]
+        if len(t1) >= 2:
+            s = s + ' ' + t1[1][1:-1]
+        if len(t1) >= 3:
+            s = s + ' ' + t1[2][1:-1]
+        return cmd.Cmd.precmd(self, s)
+
     def emptyline(self):
         """ Method called when an empty line is entered in response
         to the prompt."""
