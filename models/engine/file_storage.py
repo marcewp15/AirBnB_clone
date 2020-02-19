@@ -33,7 +33,10 @@ class FileStorage:
 
     def reload(self):
         """ deserialization """
-        classes = {'BaseModel': BaseModel, 'User': User}
+        classes = {'BaseModel': BaseModel,
+                   'User': User, 'Place': Place,
+                   'State': State, 'City': City,
+                   'Amenity': Amenity, 'Review': Review}
         try:
             with open(self.__file_path, 'r') as f1:
                 file_store = json.load(f1)
