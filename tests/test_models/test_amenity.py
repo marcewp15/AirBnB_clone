@@ -34,3 +34,6 @@ class Test_Amenity(unittest.TestCase):
     def test_docstring(self):
         """ Test documentation """
         self.assertIsNotNone(Amenity.__doc__)
+
+if __name__ == '__main__':
+    unittest.main()

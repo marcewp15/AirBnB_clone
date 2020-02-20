@@ -36,3 +36,6 @@ class Test_City(unittest.TestCase):
     def test_docstring(self):
         """ Test documentation """
         self.assertIsNotNone(City.__doc__)
+
+if __name__ == '__main__':
+    unittest.main()
