@@ -2,10 +2,16 @@
 > ## Foundations - Higher-level programming ― AirBnB clone
 *************
 
+### Project Bulit By Juan Lopez and Marcela Sanchez
+
 
 ![](https://lh3.googleusercontent.com/vBz1LR7i3UBlfRTHEOmELIAvX-A9FgNMM6NeEG50nm-zdbb3laU6boFcV-OlJ7vQVALNEDu31j8 "airbnbclone")
 ## [](https://github.com//marcewp15/AirBnB_clone)Description
 
+### Introduction
+
+__First step:__ Write a command interpreter to manage your AirBnB objects.
+This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
 
 ### The console
 * create your data model
@@ -28,4 +34,52 @@ The console will be a tool to validate this storage engine
 <p align="center"><img src="flowchart.png" width="700"></p>
 
 
+# Requirements
 
+## Installation :key:
+Use the  [git clone](https://github.com/marcewp15/AirBnB_clone.git) to install this repository
+```
+git clone https://github.com/marcewp15/AirBnB_clone.git
+```
+
+## Usage
+In the file descriptor you will find the definitions of opcode.
+* Your console should work like this in interactive mode:
+```
+$ ./console.py
+(hbnb) help
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+```
+But also in non-interactive mode: (like the Shell project in C)
+```
+$ echo "help" | ./console.py
+(hbnb)
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+```
+
+## Contribution
+This is a project for [Holberton School](https://www.holbertonschool.com/) by Holberton Students. Pull requests are welcome, if you found a bug, you can report us at the email: [1213@holbertonschool.com](mailto:1213@holbertonschool.com) or [970@holbertonschool.com](mailto:970@holbertonschool.com).
+Please make sure to update tests as appropriate.
+## Authors
+-   [Juan Carlos Lopez Sanchez](https://github.com/Juan-Bogota) - 1213@holbertonschool.com
+-   [Lady Marcela Sánchez Moreno](https://github.com/marcewp15) - 970@holbertonschool.com
