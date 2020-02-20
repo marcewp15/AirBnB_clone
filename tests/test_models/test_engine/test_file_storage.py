@@ -13,7 +13,7 @@ class Test_Base(unittest.TestCase):
     """Base class tests"""
 
     def test_1(self):
-        """  Test Dictionary"""
+        """  Test Dictionary """
         model = BaseModel()
         m.save()
         new_object = storage.all()
