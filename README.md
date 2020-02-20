@@ -1,19 +1,14 @@
 # 0x00. AirBnB clone - The console
-> ## Foundations - Higher-level programming ― AirBnB clone
-*************
-
-### Project Bulit By Juan Lopez and Marcela Sanchez
-
 
 ![](https://lh3.googleusercontent.com/vBz1LR7i3UBlfRTHEOmELIAvX-A9FgNMM6NeEG50nm-zdbb3laU6boFcV-OlJ7vQVALNEDu31j8 "airbnbclone")
 ## [](https://github.com//marcewp15/AirBnB_clone)Description
 
-### Introduction
+### Introduction :page_with_curl:
 
 __First step:__ Write a command interpreter to manage your AirBnB objects.
 This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
 
-### The console
+### The console :computer:
 * create your data model
 * manage (create, update, destroy, etc) objects via a console / command interpreter
 * store and persist objects to a file (JSON file)
@@ -28,13 +23,21 @@ The console will be a tool to validate this storage engine
 
 <p align="center"><img src="console.PNG" width="700"></p>
 
+### What’s a command interpreter?
+It’s similar to the shell of Linux but limited to a specific use-case. In this case, we want to be able to manage the objects of the project:
+* Create a new object (ex: a new User or a new Place)
+* Retrieve an object from a file, a database etc…
+* Do operations on objects (count, compute stats, etc…)
+* Update attributes of an object
+* Destroy an objec
 
-### Flowchart
+
+### Flowchart :art:
 
 <p align="center"><img src="flowchart.png" width="700"></p>
 
 
-# Requirements
+# Requirements :pencil:
 
 ## Installation :key:
 Use the  [git clone](https://github.com/marcewp15/AirBnB_clone.git) to install this repository
@@ -42,7 +45,7 @@ Use the  [git clone](https://github.com/marcewp15/AirBnB_clone.git) to install t
 git clone https://github.com/marcewp15/AirBnB_clone.git
 ```
 
-## Usage
+## Usage :wrench:
 In the file descriptor you will find the definitions of opcode.
 * Your console should work like this in interactive mode:
 ```
@@ -77,9 +80,9 @@ EOF  help  quit
 $
 ```
 
-## Contribution
+## Contribution :heavy_check_mark:
 This is a project for [Holberton School](https://www.holbertonschool.com/) by Holberton Students. Pull requests are welcome, if you found a bug, you can report us at the email: [1213@holbertonschool.com](mailto:1213@holbertonschool.com) or [970@holbertonschool.com](mailto:970@holbertonschool.com).
 Please make sure to update tests as appropriate.
-## Authors
+## Authors :performing_arts:
 -   [Juan Carlos Lopez Sanchez](https://github.com/Juan-Bogota) - 1213@holbertonschool.com
 -   [Lady Marcela Sánchez Moreno](https://github.com/marcewp15) - 970@holbertonschool.com
