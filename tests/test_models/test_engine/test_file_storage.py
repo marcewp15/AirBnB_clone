@@ -12,6 +12,13 @@ import pep8
 class Test_Base(unittest.TestCase):
     """Base class tests"""
 
+    def test_1(self):
+        """  Test Dictionary"""
+        model = BaseModel()
+        m.save()
+        new_object = storage.all()
+        self.assertEqual(dict, type(new_object))
+
     def test_pep8_conformance(self):
         """Test that we conform to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
