@@ -7,6 +7,7 @@ Unit tests for Base class
 import unittest
 from models import storage
 import pep8
+from models.base_model import BaseModel
 
 
 class Test_Base(unittest.TestCase):
@@ -15,7 +16,7 @@ class Test_Base(unittest.TestCase):
     def test_1(self):
         """  Test Dictionary """
         model = BaseModel()
-        m.save()
+        model.save()
         new_object = storage.all()
         self.assertEqual(dict, type(new_object))
 
