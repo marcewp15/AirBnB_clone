@@ -19,7 +19,7 @@ class Test_Base(unittest.TestCase):
         self.model.save()
 
     def test_existing_class(self):
-        """ """
+        """ test if the class exist """
         self.assertEqual(str(type(self.model)),
                          "<class 'models.base_model.BaseModel'>")
 
