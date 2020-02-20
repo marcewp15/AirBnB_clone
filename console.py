@@ -144,7 +144,9 @@ class HBNBCommand(cmd.Cmd):
         if len(t1) >= 2:
             s = s + ' ' + t1[1][1:-1]
         if len(t1) >= 3:
-            s = s + ' ' + t1[2][1:-1]
+            if t1[2][0] == "\"" and t1[2][-1] == "\"":
+                t1[2] = t1[2][1:-1]
+            s = s + ' ' + t1[2]
         return cmd.Cmd.precmd(self, s)
 
     def emptyline(self):
